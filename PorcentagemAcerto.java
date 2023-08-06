@@ -1,36 +1,40 @@
 import java.util.Scanner;
 
 public class PorcentagemAcerto {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int[] respostas = lerVetor(scan);
-        int[] gabarito = lerVetor(scan);        
-        scan.close();
-        double porcentagemAcerto = calcularPorcentagemAcerto(respostas, gabarito);
 
-    }
-
-    public static int[] lerVetor(Scanner scan) {
-        String[] valores = scan.nextLine().split(" ");
-        int[] vetor = new int[valores.length];
-
-        for (int i = 0; i < valores.length; i++) {
-            vetor[i] = Integer.parseInt(valores[i]);
-        }
-
-        return vetor;
-    }
-
-    public static double calcularPorcentagemAcerto(int[] respostas, int[] gabarito) {
-        int totalQuestoes = respostas.length;
+        int respostas[] = new int[100];
+        int gabarito[] = new int[100];
+        int indice = 0;
         int acertos = 0;
 
-        for (int i = 0; i < totalQuestoes; i++) {
+        while (true) {
+            int resposta = scan.nextInt();
+            if (resposta == -1) {
+                break;
+            }
+            respostas[indice] = resposta;
+            indice++;
+        }
+        indice = 0;
+        while (true) {
+            int respostaCorreta = scan.nextInt();
+            if (respostaCorreta == -1) {
+                break;
+            }
+            gabarito[indice] = respostaCorreta;
+            indice++;
+        }
+
+        for (int i = 0; i < indice; i++) {
             if (respostas[i] == gabarito[i]) {
                 acertos++;
             }
         }
+        double porcentagem = acertos / respostas.length * 100;
+        System.out.printf( "%.2f", porcentagem);
 
-        return (acertos * 100.0) / totalQuestoes;
+        scan.close();
     }
 }
