@@ -11,7 +11,7 @@ public class DataExtenso {
         int mes = Integer.parseInt(mesString);
         String anoString = valorData.substring(4,8);
 
-        String calendario[] = {"janeiro", "fevereiro", "março", "abril", "maio", "junho","julho", "agosto", "setembro", "outubro", "novembro", "dezembro"};
+        String calendario[] = {"janeiro", "fevereiro", "março", "abril", "maio", "junho","julho","agosto","setembro","outubro","novembro","dezembro"};
         System.out.printf("%s de %s de %s", diaString, calendario[(mes-1)], anoString);
     }
 }
