@@ -6,33 +6,35 @@ public class PorcentagemAcerto {
 
         int respostas[] = new int[100];
         int gabarito[] = new int[100];
-        int indice = 0;
-        int acertos = 0;
+        int indice1 = 0;
+        int indice2 = 0;
+        double acertos = 0;
+        
 
         while (true) {
             int resposta = scan.nextInt();
             if (resposta == -1) {
                 break;
             }
-            respostas[indice] = resposta;
-            indice++;
+            respostas[indice1] = resposta;
+            indice1++;
         }
-        indice = 0;
         while (true) {
             int respostaCorreta = scan.nextInt();
             if (respostaCorreta == -1) {
                 break;
             }
-            gabarito[indice] = respostaCorreta;
-            indice++;
+            gabarito[indice2] = respostaCorreta;
+            indice2++;
         }
 
-        for (int i = 0; i < indice; i++) {
+        for (int i = 0; i < indice1; i++) {
             if (respostas[i] == gabarito[i]) {
                 acertos++;
             }
         }
-        double porcentagem = acertos / respostas.length * 100;
+        double total = indice1;
+        double porcentagem = acertos/ total * 100;
         System.out.printf( "%.2f", porcentagem);
 
         scan.close();
