@@ -33,11 +33,11 @@ public class AprovacaoDisciplina {
         int cargaHoraria = scan.nextInt();
         
         for(int i = 0; i < ind1; i++){
-            if(vetorNotas[i] < 5.0){
-                reprovados++;
-            }else{
-                if(vetorPresenca[i] < cargaHoraria*0.75){
+            if(vetorPresenca[i] < cargaHoraria*0.75){
                     gasetadores++;
+            }else{
+                if(vetorNotas[i] < 5.0){
+                    reprovados++;
                 }else{
                     aprovados++;
                 }

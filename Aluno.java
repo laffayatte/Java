@@ -1,0 +1,30 @@
+import java.util.Calendar;
+
+public class Aluno {
+    String nome;
+    int matricula;
+    int anoNascimento;
+
+    Aluno(){
+        nome = "Emmet L. Brown";
+        matricula = 7714;
+        anoNascimento = 2001;
+    }
+
+    Aluno(String nome, int matricula, int anoNascimento){
+        this.nome = nome;
+        this.matricula = matricula;
+        this.anoNascimento = anoNascimento;
+    }
+
+    int getIdade(){
+        int ano = Calendar.getInstance().get(Calendar.YEAR);
+        int idade = ano - anoNascimento;
+        return idade; 
+    }
+
+    String getDescricao(){
+        return nome+" (mat="+matricula+", idade="+getIdade()+")";
+    }
+}
+
