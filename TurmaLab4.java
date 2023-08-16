@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class Turma {
+public class TurmaLab4 {
     String disciplina;
     int ano;
     int semestre;
     Professor professor;
     ArrayList<Aluno> alunos = new ArrayList<>();
 
-    Turma(String disciplina, int ano, int semestre, Professor professor){
+    TurmaLab4(String disciplina, int ano, int semestre, Professor professor){
         this.disciplina = disciplina;
         this.ano = ano;
         this.semestre = semestre;

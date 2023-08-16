@@ -19,5 +19,16 @@ public class Ensalamento {
         this.turma.add(turma);
     }
 
+    Sala getSala(Turma turma){
+        for(TurmaEmSala TurmaSalaAux: ensalamento){
+            if(TurmaSalaAux.turma == turma){
+                return TurmaSalaAux.sala;
+            }
+        }
+        
+        return null;
+    }
+
+    
     
 }
