@@ -29,7 +29,7 @@ public class Turma {
     String getHorariosString() {
         String[] dias = {"segunda", "terça", "quarta", "quinta", "sexta"};
         String[] horas = {"8hs", "10hs", "12hs", "14hs", "16hs", "18hs", "20hs"};
-
+        
         StringBuilder horariosString = new StringBuilder();
         for (int horario : horarios) {
             int diaIndex = (horario - 1) / horas.length;
